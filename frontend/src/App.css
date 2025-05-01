@@ -1,38 +1,74 @@
-.App {
-    text-align: center;
+/* Thumbnail specific styles */
+.thumbnail-container {
+  width: 1280px;
+  height: 720px;
+  position: relative;
+  overflow: hidden;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+@media (max-width: 1300px) {
+  .thumbnail-container {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Animation for title elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.animate-title {
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
-.App-link {
-    color: #61dafb;
+.animate-subtitle {
+  animation: fadeIn 0.5s ease-out 0.2s forwards;
+  opacity: 0;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.animate-highlight {
+  animation: fadeIn 0.5s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Electric colors for accents */
+.electric-blue {
+  color: #00f7ff;
+}
+
+.neon-orange {
+  color: #ff6b00;
+}
+
+.vibrant-green {
+  color: #00ff8c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .thumbnail-text h1 {
+    font-size: 2rem;
+  }
+  
+  .thumbnail-text h2 {
+    font-size: 1.5rem;
+  }
 }
